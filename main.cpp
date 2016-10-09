@@ -12,7 +12,7 @@
 using namespace std;
 
 int main(const int argc, const char *argv[]) {
-	if(argc != 9) {
+	if(argc != 7) {
 		usage();
 		exit(EXIT_FAILURE);
 	}
@@ -32,7 +32,7 @@ int main(const int argc, const char *argv[]) {
 	resistome res;
 	res.process_gene_level(records, alignments);
 	res.process_resistome(records, annotations);
-	res.write_resistome(args.prefix, utility::samplename(args.sam_fp), records);
+	res.write_resistome(utility::samplename(args.sam_fp), records);
 	
 	return 0;
 }
