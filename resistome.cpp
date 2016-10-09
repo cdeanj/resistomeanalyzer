@@ -88,7 +88,7 @@ void resistome::process_resistome(std::map<std::string, record> &records, const 
 }
 
 void resistome::write_gene_level(const std::string &prefix, const std::string &sample_name, std::map<std::string, record> &records) {
-	std::ofstream ofs(prefix + "_gene_level_resistome.tab");
+	std::ofstream ofs(prefix + "_gene_level_resistome.tsv");
 	ofs << "Sample\t" << "Gene\t" << "Hits\t" << "Gene Fraction\n";
 	for(auto it = records.begin(); it != records.end(); ++it) {
 		ofs << sample_name << "\t" << it->first << "\t" << it->second._gene_hits << "\t" << it->second.coverage() << std::endl;
@@ -96,7 +96,7 @@ void resistome::write_gene_level(const std::string &prefix, const std::string &s
 }
 
 void resistome::write_class_level(const std::string &prefix, const std::string &sample_name) {
-	std::ofstream ofs(prefix + "_class_level_resistome.tab");
+	std::ofstream ofs(prefix + "_class_level_resistome.tsv");
 	ofs << "Sample\t" << "Class\t" << "Hits\n";
 	for(auto it = class_level.begin(); it != class_level.end(); ++it) {
 		ofs << sample_name << "\t" << it->first << "\t" << it->second << std::endl;
@@ -104,7 +104,7 @@ void resistome::write_class_level(const std::string &prefix, const std::string &
 }
 
 void resistome::write_mechanism_level(const std::string &prefix, const std::string &sample_name) {
-	std::ofstream ofs(prefix + "_mechanism_level_resistome.tab");
+	std::ofstream ofs(prefix + "_mechanism_level_resistome.tsv");
 	ofs << "Sample\t" << "Mechanism\t" << "Hits\n";
         for(auto it = mechanism_level.begin(); it != mechanism_level.end(); ++it) {
                 ofs << sample_name << "\t" << it->first << "\t" << it->second << std::endl;
@@ -112,7 +112,7 @@ void resistome::write_mechanism_level(const std::string &prefix, const std::stri
 }
 
 void resistome::write_group_level(const std::string &prefix, const std::string &sample_name) {
-	std::ofstream ofs(prefix + "_group_level_resistome.tab");
+	std::ofstream ofs(prefix + "_group_level_resistome.tsv");
 	ofs << "Sample\t" << "Group\t" << "Hits\n";
         for(auto it = group_level.begin(); it != group_level.end(); ++it) {
                 ofs << sample_name << "\t" << it->first << "\t" << it->second << std::endl;
