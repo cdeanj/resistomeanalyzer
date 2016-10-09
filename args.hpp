@@ -9,7 +9,6 @@ struct cmd_args {
 	std::string ref_fp;
 	std::string annot_fp;
 	std::string sam_fp;
-	std::string prefix;
 };
 
 static void usage() {
@@ -21,7 +20,6 @@ static void usage() {
         fprintf(stderr, "	-ref_fp		STR/FILE		fasta file path\n");
 	fprintf(stderr, "	-annot_fp	STR/FILE		annotation file path\n");
         fprintf(stderr, "	-sam_fp		STR/FILE		sam file path\n");
-        fprintf(stderr, "	-prefix		STR			output prefix\n\n");
 }
 
 struct cmd_args 
@@ -36,8 +34,6 @@ inline parse_command_line(const int argc, const char *argv[]) {
 			arg.annot_fp = args[++i];
                 else if(args[i].compare("-sam_fp") == 0)
                         arg.sam_fp = args[++i];
-                else if(args[i].compare("-prefix") == 0)
-                        arg.prefix = args[++i];
                 else {
                         usage();
                         exit(EXIT_FAILURE);
