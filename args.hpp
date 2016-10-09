@@ -9,6 +9,10 @@ struct cmd_args {
 	std::string ref_fp;
 	std::string annot_fp;
 	std::string sam_fp;
+	std::string gene_fp;
+	std::string mech_fp;
+	std::string group_fp;
+	std::string class_fp;
 };
 
 static void usage() {
@@ -34,6 +38,18 @@ inline parse_command_line(const int argc, const char *argv[]) {
 			arg.annot_fp = args[++i];
                 else if(args[i].compare("-sam_fp") == 0)
                         arg.sam_fp = args[++i];
+		else if(args[i].compare("-gene_fp") == 0) {
+			arg.gene_fp = args[++i];
+		}
+		else if(args[i].compare("-mech_fp") == 0) {
+			arg.mech_fp = args[++i];
+                }
+		else if(args[i].compare("-group_fp") == 0) {
+			arg.group_fp = args[++i];
+                }
+		else if(args[i].compare("-class_fp") == 0) {
+			arg.class_fp = args[++i];
+                }
                 else {
                         usage();
                         exit(EXIT_FAILURE);
