@@ -19,11 +19,11 @@ static void usage() {
         fprintf(stderr, "\n");
         fprintf(stderr, "Program: ResistomeAnalyzer \n");
         fprintf(stderr, "Contact: Chris Dean <cdean11@rams.colostate.edu>\n\n");
-        fprintf(stderr, "Usage: rsa [options]\n\n");
+        fprintf(stderr, "Usage: ./resistome [options]\n\n");
         fprintf(stderr, "Options:\n\n");
-        fprintf(stderr, "	-ref_fp		STR/FILE		fasta file path\n");
-	fprintf(stderr, "	-annot_fp	STR/FILE		annotation file path\n");
-        fprintf(stderr, "	-sam_fp		STR/FILE		sam file path\n");
+        fprintf(stderr, "	-ref_fp		STR/FILE	Fasta formatted reference sequence\n");
+	fprintf(stderr, "	-annot_fp	STR/FILE	CSV formatted annotation database\n");
+        fprintf(stderr, "	-sam_fp		STR/FILE	SAM formatted alignment file\n\n");
 }
 
 struct cmd_args 
