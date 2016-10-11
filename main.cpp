@@ -12,7 +12,7 @@
 using namespace std;
 
 int main(const int argc, const char *argv[]) {
-	if(argc != 15) {
+	if(argc != 17) {
 		usage();
 		exit(EXIT_FAILURE);
 	}
@@ -31,7 +31,7 @@ int main(const int argc, const char *argv[]) {
 
 	resistome res;
 	res.process_gene_level(records, alignments);
-	res.process_resistome(records, annotations);
+	res.process_resistome(records, annotations, args.threshold);
 	res.write_resistome(args, utility::samplename(args.sam_fp), records);
 	
 	return 0;

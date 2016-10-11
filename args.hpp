@@ -13,6 +13,7 @@ struct cmd_args {
 	std::string mech_fp;
 	std::string group_fp;
 	std::string class_fp;
+	int threshold;
 };
 
 static void usage() {
@@ -27,7 +28,8 @@ static void usage() {
 	fprintf(stderr, "	-gene_fp	STR/FILE	Output name for gene level resistome\n");
 	fprintf(stderr, "	-group_fp	STR/FILE	Output name for group level resistome\n");
 	fprintf(stderr, "	-mech_fp	STR/FILE	Output name for mechanism level resistome\n");
-	fprintf(stderr, "	-class_fp	STR/FILE	Output name for class level resistome\n\n");
+	fprintf(stderr, "	-class_fp	STR/FILE	Output name for class level resistome\n");
+	fprintf(stderr, "	-t		INT		Gene fraction threshold\n\n");
 }
 
 struct cmd_args 
@@ -54,6 +56,9 @@ inline parse_command_line(const int argc, const char *argv[]) {
 		else if(args[i].compare("-class_fp") == 0) {
 			arg.class_fp = args[++i];
                 }
+		else if(args[i].compare("-t") == 0) {
+			arg.threshold = atoi(args[++i].c_str());
+		}
                 else {
                         usage();
                         exit(EXIT_FAILURE);
