@@ -5,11 +5,11 @@ Resistome Analyzer is a simple tool for analyzing the resistome of large metagen
 ## Output
 The output consists of four [TSV](https://en.wikipedia.org/wiki/Tab-separated_values) text files, one for each level of the annotation database hierarchy (gene, group, mechanism, class). Within each file, the first column lists the sample that was analyzed (SAM file), the second column lists the gene, group, mechanism or class that was identified, and the third column gives the total count of reads that aligned to the target gene, group, mechanism or class. For the gene-level output, there is a fourth column that describes the gene fraction, which can be defined as the proportion of nucleotides in the reference sequence that were aligned to by at least one sequence read. This threshold is user-defined, however, it is recommended to set this parameter to a value of 80 in order to decrease the amount of false positive gene identifications.
 
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| Sample    | Group        | Hits |
+| ----------|:------------:| ----:|
+| alignment | AAC6-PRIME   | 3    |
+| alignment | ACT          | 1    |
+| alignment | ANT2-DPRIME  | 1    |
 
 ## Installation
 ```bash
