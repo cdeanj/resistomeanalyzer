@@ -23,7 +23,11 @@ static void usage() {
         fprintf(stderr, "Options:\n\n");
         fprintf(stderr, "	-ref_fp		STR/FILE	Fasta formatted reference sequence\n");
 	fprintf(stderr, "	-annot_fp	STR/FILE	CSV formatted annotation database\n");
-        fprintf(stderr, "	-sam_fp		STR/FILE	SAM formatted alignment file\n\n");
+        fprintf(stderr, "	-sam_fp		STR/FILE	SAM formatted alignment file\n");
+	fprintf(stderr, "	-gene_fp	STR/FILE	Output name for gene level resistome\n");
+	fprintf(stderr, "	-group_fp	STR/FILE	Output name for group level resistome\n");
+	fprintf(stderr, "	-mech_fp	STR/FILE	Output name for mechanism level resistome\n");
+	fprintf(stderr, "	-class_fp	STR/FILE	Output name for class level resistome\n\n");
 }
 
 struct cmd_args 
