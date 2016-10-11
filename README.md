@@ -27,7 +27,7 @@ $ -amr_fp /path/to/your/reference_sequence.fasta
 ```
 
 ##### `-annot_fp`
-Path to CSV formatted annotations database
+Path to CSV formatted annotation database
 ```
 $ -annot_fp /path/to/your/annotation_database.csv
 ```
@@ -44,19 +44,19 @@ Path to output for gene level
 $ -gene_fp /path/to/your/gene_output
 ```
 
-##### `-mech_fp`
+##### `-group_fp`
 Path to output for group level
 ```bash
 $ -gene_fp /path/to/your/group_output
 ```
 
-##### `-gene_fp`
+##### `-mech_fp`
 Path to output for mechanism level
 ```bash
 $ -gene_fp /path/to/your/mechanism_output
 ```
 
-##### `-gene_fp`
+##### `-class_fp`
 Path to output for class level
 ```bash
 $ -gene_fp /path/to/your/class_output
