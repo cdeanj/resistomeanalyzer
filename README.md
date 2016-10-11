@@ -37,3 +37,29 @@ Path to SAM formatted alignment file
 ```bash
 $ -sam_fp /path/to/your/alignment.sam
 ```
+
+##### `-gene_fp`
+Path to output for gene level
+```bash
+$ -gene_fp /path/to/your/gene_output
+```
+
+##### `-mech_fp`
+Path to output for group level
+```bash
+$ -gene_fp /path/to/your/group_output
+```
+
+##### `-gene_fp`
+Path to output for mechanism level
+```bash
+$ -gene_fp /path/to/your/mechanism_output
+```
+
+##### `-gene_fp`
+Path to output for class level
+```bash
+$ -gene_fp /path/to/your/class_output
+```
+
+
