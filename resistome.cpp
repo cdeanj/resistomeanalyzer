@@ -90,7 +90,7 @@ void resistome::process_resistome(std::map<std::string, record> &records, const 
 }
 
 void resistome::write_gene_level(const int threshold, const std::string &gene_fp, const std::string &sample_name, std::map<std::string, record> &records) {
-	std::ofstream ofs(gene_fp + ".tsv");
+	std::ofstream ofs(gene_fp);
 	ofs << "Sample\t" << "Gene\t" << "Hits\t" << "Gene Fraction\n";
 	for(auto it = records.begin(); it != records.end(); ++it) {
 		if(it->second.coverage() > threshold) {
@@ -100,7 +100,7 @@ void resistome::write_gene_level(const int threshold, const std::string &gene_fp
 }
 
 void resistome::write_class_level(const std::string &class_fp, const std::string &sample_name) {
-	std::ofstream ofs(class_fp + ".tsv");
+	std::ofstream ofs(class_fp);
 	ofs << "Sample\t" << "Class\t" << "Hits\n";
 	for(auto it = class_level.begin(); it != class_level.end(); ++it) {
 		ofs << sample_name << "\t" << it->first << "\t" << it->second << std::endl;
@@ -108,7 +108,7 @@ void resistome::write_class_level(const std::string &class_fp, const std::string
 }
 
 void resistome::write_mechanism_level(const std::string &mech_fp, const std::string &sample_name) {
-	std::ofstream ofs(mech_fp + ".tsv");
+	std::ofstream ofs(mech_fp);
 	ofs << "Sample\t" << "Mechanism\t" << "Hits\n";
         for(auto it = mechanism_level.begin(); it != mechanism_level.end(); ++it) {
                 ofs << sample_name << "\t" << it->first << "\t" << it->second << std::endl;
@@ -116,7 +116,7 @@ void resistome::write_mechanism_level(const std::string &mech_fp, const std::str
 }
 
 void resistome::write_group_level(const std::string &group_fp, const std::string &sample_name) {
-	std::ofstream ofs(group_fp + ".tsv");
+	std::ofstream ofs(group_fp);
 	ofs << "Sample\t" << "Group\t" << "Hits\n";
         for(auto it = group_level.begin(); it != group_level.end(); ++it) {
                 ofs << sample_name << "\t" << it->first << "\t" << it->second << std::endl;
