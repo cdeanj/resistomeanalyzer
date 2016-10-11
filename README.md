@@ -62,4 +62,10 @@ Path to output for class level
 $ -gene_fp /path/to/your/class_output
 ```
 
+##### `-t`
+Threshold parameter for determining gene significance
+```bash
+$ -t
+```
+
 
