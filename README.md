@@ -13,7 +13,6 @@ The output consists of four [TSV](https://en.wikipedia.org/wiki/Tab-separated_va
 $ git clone https://github.com/cdeanj/resistomeanalyzer.git
 $ cd resistomeanalyzer
 $ make
-$ cp resistome /usr/local/bin
 $ ./resistome
 ```
 
