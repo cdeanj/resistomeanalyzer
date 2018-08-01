@@ -33,7 +33,7 @@ $ ./resistome \
 
 | Option        | Type | Description   |
 | ------------- |:----:|:-------------:|
-| ref_fp        | FILE | Path to FASTA formatted reference database |
+| ref_fp        | FILE | Path to FASTA formatted reference database (each sequence must be on a single line) |
 | annot_fp      | FILE | Path to CSV formatted annotation database  |
 | sam_fp        | FILE | Path to SAM formatted alignment file       |
 | gene_fp       | FILE | File to write gene level results to        |
