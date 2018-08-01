@@ -12,7 +12,6 @@ void resistome::process_gene_level(std::map<std::string, record> &records, const
 
 		rec->second.update_gene_hits();
 
-        	int pos_in_read = 0;
         	int pos_in_gene = alignments[i].pos-1;
 
         	int gene_length = rec->second.get_gene().length();
@@ -22,25 +21,26 @@ void resistome::process_gene_level(std::map<std::string, record> &records, const
                 	char operation = alignments[i].cigar[j].second;
                 	int start = pos_in_gene;
                 	int stop = start + occurrence;
-			if(stop > gene_length) {
-                        	stop = gene_length;
-                	}
 
                 	switch(operation) {
                         	case 'M':
                                 	for(int k = start; k < stop; k++) {
                                         	rec->second._base_hits[k] = 1;
                                         	pos_in_gene++;
-                                        	pos_in_read++;
                                 	}
                                 	break;
                         	case '=':
                                 	for(int k = start; k < stop; k++) {
                                         	rec->second._base_hits[k] = 1;
                                         	pos_in_gene++;
-                                        	pos_in_read++;
                                 	}
                                 	break;
+				 case 'X':
+                                        for(int k = start; k < stop; k++) { 
+                                                rec->second._base_hits[k] = 1;
+                                                pos_in_gene++;
+                                        }
+                                        break;
                         	case 'D':
                                 	pos_in_gene += occurrence;
                                 	break;
@@ -48,18 +48,12 @@ void resistome::process_gene_level(std::map<std::string, record> &records, const
                                 	pos_in_gene += occurrence;
                                 	break;
                         	case 'S':
-                                	pos_in_read += occurrence;
                                 	break;
                         	case 'I':
-                                	pos_in_read += occurrence;
                                 	break;
                         	case 'H':
                                 	break;
                         	case 'P':
-                                	break;
-                        	case 'X':
-                                	pos_in_gene += occurrence;
-                                	pos_in_read += occurrence;
                                 	break;
                         	default:
                                 	break;
